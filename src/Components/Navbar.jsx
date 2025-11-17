@@ -38,7 +38,7 @@ const Navbar = () => {
                 duration={500}
                 spy={true}
                 offset={-70}
-                className={`cursor-pointer ${scrolled ? 'hover:text-black' : 'hover:text-yellow-200'}`}
+                className={`cursor-pointer hover:underline  ${scrolled ? 'hover:text-black' : 'hover:text-yellow-200'}`}
               >
                 {item.label}
                
