@@ -1,6 +1,6 @@
 export default function ProjectCard({image, title, description, link}) {
     return(
-        <div className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 size-full">
+        <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 size-full">
             <img src={image} alt={title} className="w-20 h-40 object-cover"/>
             <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>

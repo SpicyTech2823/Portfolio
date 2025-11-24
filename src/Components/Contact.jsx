@@ -37,7 +37,7 @@ const Contact = () => {
   return (
         <section
       id="contact"
-      className="min-h-screen flex items-center justify-center bg-black px-10 py-20"
+      className="min-h-screen flex items-center justify-center  px-10 py-20"
     >
       <div className="w-full max-w-5xl shadow-lg rounded-2xl p-8">
         {/* Heading */}
@@ -77,7 +77,7 @@ const Contact = () => {
                 name="name"
                 type="text"
                 placeholder="Your name"
-                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-200 outline-none text-white bg-black text-lg"
+                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-200 outline-none text-white  text-lg"
                 required
               />
             </div>
@@ -99,7 +99,7 @@ const Contact = () => {
                 name="message"
                 rows="4"
                 placeholder="Your message"
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-yellow-200 outline-none text-white bg-black"
+                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-yellow-200 outline-none text-white "
                 required
               ></textarea>
             </div>

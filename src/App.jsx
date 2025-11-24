@@ -8,7 +8,7 @@ import Footer from "./Components/Footer";
 const App = () => {
   
   return (
-    <div className="bg-black">
+    <div className="bg-gray-900">
       <Navbar />
       <div className="flex flex-col space-y-15"> {/* Add consistent vertical spacing */}
         <Home />

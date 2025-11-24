@@ -31,7 +31,7 @@ const skills = [
     
 const Skills = () => {
   return (
-    <div id="skill" className="min-h-screen bg-black px-10 py-20 ml-20  mt-6 pb-20">
+    <div id="skill" className="min-h-screen px-10 py-20 ml-20  mt-6 pb-20">
         <h2 className="text-3xl font-bold text-center text-white mb-8 ">
           My <span className="text-yellow-200">Skills</span>
         </h2>

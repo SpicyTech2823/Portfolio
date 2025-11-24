@@ -23,7 +23,7 @@ export default function Project(){
     },
   ];
   return (
-    <section id="project" className="min-h-screen py-20 bg-black ml-20">
+    <section id="project" className="min-h-screen py-20  ml-20">
         <h2 className="text-3xl font-bold text-center text-white mb-8 ">
           Feature<span className="text-yellow-200"> &nbsp;Projects</span>
         </h2>

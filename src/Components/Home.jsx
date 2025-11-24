@@ -30,8 +30,11 @@ const Home = () => {
 
           <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3 mt-5">
             <button className="bg-yellow-200 text-black px-6 py-3 rounded-3xl w-full sm:w-auto mb-3 sm:mb-0 hover:bg-yellow-300 transition">
-              <a href="https://github.com/SpicyTech2823" target="blank" >GitHub</a>
-              <i class="fa-brands fa-github"></i> 
+              <a href="https://github.com/SpicyTech2823" target="blank" >
+                <span>GitHub</span>
+                <i class="fa-brands fa-github"></i> 
+              </a>
+              
             </button>
             <button
               onClick={onButtonClick}
