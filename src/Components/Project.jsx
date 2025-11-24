@@ -23,14 +23,14 @@ export default function Project(){
     },
   ];
   return (
-    <section id="project" className="min-h-screen py-20  ml-20">
+    <section id="project" className="min-h-screen p-10 py-20 items-center justify-center md:pb-20 ">
         <h2 className="text-3xl font-bold text-center text-white mb-8 ">
           Feature<span className="text-yellow-200"> &nbsp;Projects</span>
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-10 pb-20 pt-7 ">
             {projects.map((project, index) => (
                 <div key={index} className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">  
-                    <img src={project.image} alt={project.title} className="w-full h-50 md:h-56 object-cover mx-auto"/>
+                    <img src={project.image} alt={project.title} className="w-80 h-60 mt-7 rounded-2xl md:h-60 md:w-100 object-cover mx-auto"/>
                     <div className="p-6">
                         <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>  
                         <p className="text-gray-300 mb-4">{project.description}</p>

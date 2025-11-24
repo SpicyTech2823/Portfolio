@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from 'react-scroll'
-
+import { Link } from 'react-scroll'   
 const Navbar = () => {
   const [scrolled, setScrolled] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);

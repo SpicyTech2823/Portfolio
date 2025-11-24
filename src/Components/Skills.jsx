@@ -31,8 +31,8 @@ const skills = [
     
 const Skills = () => {
   return (
-    <div id="skill" className="min-h-screen px-10 py-20 ml-20  mt-6 pb-20">
-        <h2 className="text-3xl font-bold text-center text-white mb-8 ">
+    <div id="skill" className="min-h-screen items-center justify-center px-10 py-20 mt-9 pb-20">
+        <h2 className="text-2xl md:text-3xl font-bold text-center uppercase leading-relaxed text-amber-200 mb-8  underline underline-offset-8">
           My <span className="text-yellow-200">Skills</span>
         </h2>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-10 p-4">

@@ -18,7 +18,7 @@ const Home = () => {
         className="flex flex-col-reverse md:flex-row items-center justify-center min-h-screen px-6 md:px-28 bg-gray-900"
       >
         {/* Text Section */}
-        <div className="text-center md:text-left md:w-1/2 mt-6 md:mt-0">
+        <div className="text-center md:text-left md:w-1/2 mt-6 md:mt-0 ml-0 md:ml-10">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white uppercase leading-relaxed">
             Hi, I am <br />
             Sakirin Sles.
