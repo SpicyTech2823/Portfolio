@@ -21,7 +21,6 @@ const skills = [
     { name: "JavaScript", icon: <FaJs className="text-6xl text-yellow-500" /> },
     { name: "React", icon: <FaReact className="text-6xl text-blue-400" /> },
     { name: "Python", icon: <FaPython className="text-6xl text-blue-500" /> },
-    { name: "Django", icon: <SiDjango className="text-6xl text-green-800" /> },
     { name: "PHP", icon: <FaPhp className="text-6xl text-purple-700" /> },
     { name: "MySQL", icon: <SiMysql className="text-6xl text-blue-800" /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-6xl text-blue-400" /> },
@@ -31,7 +30,7 @@ const skills = [
     
 const Skills = () => {
   return (
-    <div id="skill" className="min-h-screen items-center justify-center px-10 py-20 mt-9 pb-20">
+    <div id="skill" className="items-center justify-center px-10 py-20 mt-9 pb-20">
         <h2 className="text-2xl md:text-3xl font-bold text-center uppercase leading-relaxed text-amber-200 mb-8  underline underline-offset-8">
           My <span className="text-yellow-200">Skills</span>
         </h2>

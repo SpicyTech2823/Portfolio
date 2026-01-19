@@ -41,7 +41,7 @@ const Contact = () => {
     >
       <div className="w-full max-w-5xl shadow-lg rounded-2xl p-8">
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-center text-white mb-10">
+        <h2 className="text-4xl font-bold text-center text-amber-200 underline underline-offset-8 mb-10">
           Contact <span className="text-yellow-200">Me</span>
         </h2>
 

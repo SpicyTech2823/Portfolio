@@ -1,46 +1,58 @@
+import ProjectCard from "./ProjectCard";
 import weatherAapp from "../assets/images/weather-app.jpg";
 import cryptograpgy from "../assets/images/Cryptography.jpg";
 import expense from "../assets/images/expense-tracker.jpg";
-export default function Project(){
+import car_rental from "../assets/images/car_rental.png";
+export default function Project() {
   const projects = [
     {
       image: weatherAapp,
       title: "Weather App",
-      description: "This is a simple weather app using html css and javascripts by fetching API.",
-      link: "https://weather-app-javascripts.netlify.app/"
+      description:
+        "This is a simple weather app using html css and javascripts by fetching API.",
+      link: "https://weather-app-javascripts.netlify.app/",
     },
     {
       image: cryptograpgy,
       title: "Cryptography Lesson Website",
-      description: "A website that provides lessons on cryptography, including various encryption techniques and algorithms.",
-      link:"https://resplendent-syrniki-b796f2.netlify.app/",
+      description:
+        "A website that provides lessons on cryptography, including various encryption techniques and algorithms.",
+      link: "https://resplendent-syrniki-b796f2.netlify.app/",
     },
     {
       image: expense,
       title: "Expense Tracker",
-      description: "An expense tracker web application that helps users manage their finances by tracking expenses.",
-      link:"https://spicytech2823.github.io/Expense-Tracker/",
+      description:
+        "An expense tracker web application that helps users manage their finances by tracking expenses.",
+      link: "https://spicytech2823.github.io/Expense-Tracker/",
+    },
+    {
+      image: car_rental,
+      title: "Car Rental",
+      description:
+        "A car rental web application that allows users to browse and book available vehicles.",
+      link: "https://car-rental-nine-virid.vercel.app/",
     },
   ];
   return (
-    <section id="project" className="min-h-screen p-10 py-20 items-center justify-center md:pb-20 ">
-        <h2 className="text-3xl font-bold text-center text-white mb-8 ">
-          Feature<span className="text-yellow-200"> &nbsp;Projects</span>
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-10 pb-20 pt-7 ">
-            {projects.map((project, index) => (
-                <div key={index} className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">  
-                    <img src={project.image} alt={project.title} className="w-80 h-60 mt-7 rounded-2xl md:h-60 md:w-100 object-cover mx-auto"/>
-                    <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>  
-                        <p className="text-gray-300 mb-4">{project.description}</p>
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-yellow-200 hover:underline">
-                            View Project
-                        </a>  
-                    </div>
-                </div>
-            ))}
-        </div>
+    <section
+      id="project"
+      className=" p-10 py-20 items-center justify-center md:pb-20 "
+    >
+      <h2 className="text-3xl font-bold text-center text-amber-200 underline underline-offset-8 mb-8 ">
+        Feature<span className="text-yellow-200"> &nbsp;Projects</span>
+      </h2>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-10 pb-20 pt-7 ">
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            image={project.image}
+            title={project.title}
+            description={project.description}
+            link={project.link}
+          />
+        ))}
+      </div>
     </section>
-  )
-} 
+  );
+}

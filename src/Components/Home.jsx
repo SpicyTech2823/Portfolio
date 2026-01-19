@@ -1,6 +1,6 @@
 import Sakirin1 from "../Images/Sakirin1.jpg";
 import CV from "../assets/images/CV.pdf";
-
+import profile from "../assets/images/profile.jpg";
 const Home = () => {
   const onButtonClick = () => {
     const link = document.createElement("a");
@@ -49,7 +49,7 @@ const Home = () => {
         <div className="md:w-1/2 flex justify-center md:justify-end mb-6 md:mb-0">
           <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-yellow-200">
             <img
-              src={Sakirin1}
+              src={profile}
               alt="Profile"
               className="w-full h-full object-cover"
             />
