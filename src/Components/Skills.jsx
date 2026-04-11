@@ -6,9 +6,10 @@ import {
   FaReact,
   FaPython,
   FaPhp,
+  FaLaravel,
 } from "react-icons/fa";
+
 import {
-  SiDjango,
   SiTailwindcss,
   SiMysql,
   SiAdobephotoshop,
@@ -22,6 +23,7 @@ const skills = [
     { name: "React", icon: <FaReact className="text-6xl text-blue-400" /> },
     { name: "Python", icon: <FaPython className="text-6xl text-blue-500" /> },
     { name: "PHP", icon: <FaPhp className="text-6xl text-purple-700" /> },
+    { name: "Laravel", icon: <FaLaravel className="text-6xl text-red-600" /> },
     { name: "MySQL", icon: <SiMysql className="text-6xl text-blue-800" /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-6xl text-blue-400" /> },
     { name: "Adobe Photoshop", icon: <SiAdobephotoshop className="text-6xl text-blue-700" /> },

@@ -51,6 +51,7 @@ export default function Project() {
             description={project.description}
             link={project.link}
           />
+    
         ))}
       </div>
     </section>

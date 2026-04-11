@@ -24,7 +24,7 @@ const Home = () => {
             Sakirin Sles.
           </h1>
           <p className="text-white text-sm sm:text-base mt-3">
-            A Cambodian based front-end developer passionate about building
+            A Cambodian based web developer passionate about building
             accessible and user-friendly websites.
           </p>
 

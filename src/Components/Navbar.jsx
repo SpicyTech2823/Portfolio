@@ -33,6 +33,7 @@ const Navbar = () => {
     { id: "about", label: "About" },
     { id: "skill", label: "Skill" },
     { id: "project", label: "Project" },
+    { id: "certificate", label: "Certificate" },
     { id: "contact", label: "Contact" },
   ];
   const navBgClass = useMemo(
@@ -56,7 +57,7 @@ const Navbar = () => {
       >
         <div className="text-2xl font-bold">SLES SAKIRIN</div>
         {/* Desktop menu */}
-        <ul className="hidden md:flex gap-8 text-lg font-medium items-center">
+        <ul className="hidden md:flex gap-8 text-lg font-medium">
           {navItems.map((item) => (
             <li key={item.id}>
               <Link

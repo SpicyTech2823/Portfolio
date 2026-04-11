@@ -4,7 +4,7 @@ export default function ProjectCard({ image, title, description, link }) {
       <img
         src={image}
         alt={title}
-        className="w-full h-60 object-cover rounded-2xl mt-7 mx-auto px-7"
+        className="w-full h-60 object-cover rounded-2xl mt-7 px-7"
       />
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>

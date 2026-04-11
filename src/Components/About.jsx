@@ -9,7 +9,7 @@ const About = () => {
       </h1>
       <p className="text-base md:text-lg mt-4 max-w-3xl leading-tight text-white">
         <span className="font-bold italic">
-          I am a front-end developer based in Cambodia,
+          I am a web developer based in Cambodia,
         </span>{" "}
         specializing in creating beautiful, functional, and user-friendly
         websites. With a strong foundation in HTML, CSS, and JavaScript, I bring
