@@ -38,15 +38,15 @@ const Navbar = () => {
   ];
   const navBgClass = useMemo(
     () => (scrolled ? "bg-yellow-200" : "bg-black"),
-    [scrolled]
+    [scrolled],
   );
   const navTextClass = useMemo(
     () => (scrolled ? "text-black" : "text-white"),
-    [scrolled]
+    [scrolled],
   );
   const hoverClass = useMemo(
     () => (scrolled ? "hover:text-black" : "hover:text-yellow-200"),
-    [scrolled]
+    [scrolled],
   );
   return (
     <nav

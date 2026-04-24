@@ -1,4 +1,4 @@
-import Sakirin1 from "../Images/Sakirin1.jpg";
+
 import CV from "../assets/images/CV.pdf";
 import profile from "../assets/images/profile.jpg";
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
     <div>
       <section
         id="home"
-        className="flex flex-col-reverse md:flex-row items-center justify-center min-h-screen px-6 md:px-28 bg-gray-900"
+        className="flex flex-col-reverse md:flex-row items-center justify-center min-h-screen px-6 md:px-28 dark:bg-gray-900 bg-white"
       >
         {/* Text Section */}
         <div className="text-center md:text-left md:w-1/2 mt-6 md:mt-0 ml-0 md:ml-10">

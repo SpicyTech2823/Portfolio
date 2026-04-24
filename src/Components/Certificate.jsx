@@ -1,5 +1,7 @@
 import OOAD from "../assets/images/OOAD.png";
-
+import stem2024 from "../assets/images/stem2024.png";
+import stem2025 from "../assets/images/stem2025.png";
+import cro from "../assets/images/cro.png";
 const Certificate = () => {
     const certificates = [
         {
@@ -8,12 +10,16 @@ const Certificate = () => {
         },
         {
             id: 2,
-            Image: OOAD,
+            Image: stem2024,
         },
         {
             id: 3,
-            Image: OOAD,
+            Image: stem2025,
         },
+        {
+            id: 4,
+            Image: cro,
+        }
         
 
         
