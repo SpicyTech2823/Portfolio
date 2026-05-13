@@ -1,6 +1,6 @@
 import OOAD from "../assets/images/OOAD.png";
 import stem2024 from "../assets/images/stem2024.png";
-import stem2025 from "../assets/images/stem2025.png";
+import stem2025 from "../assets/images/STEM2025.png";
 import cro from "../assets/images/cro.png";
 const Certificate = () => {
     const certificates = [
