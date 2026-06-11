@@ -37,22 +37,27 @@ export default function Project() {
   return (
     <section
       id="project"
-      className=" p-10 py-20 items-center justify-center md:pb-20 "
+      className="scroll-mt-28 bg-slate-950/75 py-24 px-4 sm:px-6 lg:px-8"
     >
-      <h2 className="text-3xl font-bold text-center text-amber-200 underline underline-offset-8 mb-8 ">
-        Feature<span className="text-yellow-200"> &nbsp;Projects</span>
-      </h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-10 pb-20 pt-7 ">
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            image={project.image}
-            title={project.title}
-            description={project.description}
-            link={project.link}
-          />
-    
-        ))}
+      <div className="mx-auto max-w-7xl">
+        <h2 className="text-3xl font-bold text-center text-amber-200 underline underline-offset-8 mb-8">
+          Feature<span className="text-yellow-200"> &nbsp;Projects</span>
+        </h2>
+        <p className="mx-auto max-w-2xl text-center text-slate-300 mb-12 sm:text-lg">
+          Here are some of my recent projects. Click any card to open the live
+          demo.
+        </p>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              image={project.image}
+              title={project.title}
+              description={project.description}
+              link={project.link}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
