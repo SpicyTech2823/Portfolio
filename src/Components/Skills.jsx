@@ -7,8 +7,9 @@ import {
   FaPython,
   FaPhp,
   FaLaravel,
+  FaGithub,
 } from "react-icons/fa";
-
+import {FaFlutter} from "react-icons/fa6";
 import {
   SiTailwindcss,
   SiMysql,
@@ -28,6 +29,8 @@ const skills = [
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-6xl text-blue-400" /> },
     { name: "Adobe Photoshop", icon: <SiAdobephotoshop className="text-6xl text-blue-700" /> },
     { name: "Figma", icon: <SiFigma className="text-6xl text-pink-500" /> },
+    { name: "GitHub", icon: <FaGithub className="text-6xl text-gray-800" /> },
+    { name: "Flutter", icon: <FaFlutter className="text-6xl text-blue-500" /> },
 ]
     
 const Skills = () => {

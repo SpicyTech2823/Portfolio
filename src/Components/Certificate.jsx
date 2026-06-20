@@ -31,7 +31,7 @@ const Certificate = () => {
       id="certificate"
       className="min-h-screen flex flex-col items-center justify-center text-white py-20"
     >
-      <h1 className="md:text-4xl sm:text-2xl font-bold text-center text-yellow-200 underline underline-offset-8 mb-10">
+      <h1 className="text-3xl font-bold text-center text-yellow-200 underline underline-offset-8 mb-10">
         Certifications
       </h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-10">

@@ -1,11 +1,11 @@
 
-import CV from "../assets/images/CV.pdf";
+import CV from "../assets/images/Sles-Sakirin-V2.pdf";
 import profile from "../assets/images/profile.jpg";
 const Home = () => {
   const onButtonClick = () => {
     const link = document.createElement("a");
     link.href = CV;
-    link.download = "Sakirin_CV.pdf";
+    link.download = "Sles-Sakirin-V2.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -24,8 +24,8 @@ const Home = () => {
             Sakirin Sles.
           </h1>
           <p className="text-white text-sm sm:text-base mt-3">
-            A Cambodian based web developer passionate about building
-            accessible and user-friendly websites.
+            A Cambodian based web/app developer passionate about building
+            accessible and user-friendly websites and applications.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-3 mt-5">
