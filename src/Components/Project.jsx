@@ -11,6 +11,7 @@ export default function Project() {
       description:
         "This is a simple weather app using html css and javascripts by fetching API.",
       link: "https://weather-app-javascripts.netlify.app/",
+      source_code:"https://github.com/SpicyTech2823/weather-app-javascripts"
     },
     {
       image: cryptograpgy,
@@ -18,6 +19,7 @@ export default function Project() {
       description:
         "A website that provides lessons on cryptography, including various encryption techniques and algorithms.",
       link: "https://resplendent-syrniki-b796f2.netlify.app/",
+      source_code:"https://github.com/SpicyTech2823/Crytography"
     },
     {
       image: expense,
@@ -25,13 +27,15 @@ export default function Project() {
       description:
         "An expense tracker web application that helps users manage their finances by tracking expenses.",
       link: "https://spicytech2823.github.io/Expense-Tracker/",
+      source_code:"https://github.com/SpicyTech2823/Expense-Tracker"
     },
     {
       image: car_rental,
       title: "Car Rental",
       description:
         "A car rental web application that allows users to browse and book available vehicles.",
-      link: "https://car-rental-nine-virid.vercel.app/",
+      link: "https://carentalfrontend.netlify.app/",
+      source_code:"https://github.com/SpicyTech2823/carental_react_node_web"
     },
   ];
   return (
@@ -55,6 +59,7 @@ export default function Project() {
               title={project.title}
               description={project.description}
               link={project.link}
+              source_code={project.source_code}
             />
           ))}
         </div>

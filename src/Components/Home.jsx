@@ -1,11 +1,11 @@
 
-import CV from "../assets/images/Sles-Sakirin-V2.pdf";
+import CV from "../assets/images/sles_sakirin_cv.pdf";
 import profile from "../assets/images/profile.jpg";
 const Home = () => {
   const onButtonClick = () => {
     const link = document.createElement("a");
     link.href = CV;
-    link.download = "Sles-Sakirin-V2.pdf";
+    link.download = "sles_sakirin_cv.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
