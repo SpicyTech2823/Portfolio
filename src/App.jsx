@@ -9,18 +9,16 @@ import Certificate from "./Components/Certificate";
 const App = () => {
 
   return (
-    <div className="bg-gray-900 scroll-smooth">
+    <main>
       <Navbar />
-      <div className="flex flex-col space-y-15"> {/* Add consistent vertical spacing */}
-        <Home />
-        <About />
-        <Skills />
-        <Project />
-        <Certificate />
-        <Contact /> 
-      </div>
+      <Home />
+      <About />
+      <Skills />
+      <Project />
+      <Certificate />
+      <Contact />
       <Footer />
-    </div>
+    </main>
   );
 };
 export default App;

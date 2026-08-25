@@ -1,54 +1,8 @@
 import React from "react";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaPython,
-  FaPhp,
-  FaLaravel,
-  FaGithub,
-} from "react-icons/fa";
-import {FaFlutter} from "react-icons/fa6";
-import {
-  SiTailwindcss,
-  SiMysql,
-  SiAdobephotoshop,
-  SiFigma,
-} from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaPhp, FaLaravel, FaGithub } from "react-icons/fa";
+import { FaFlutter } from "react-icons/fa6";
+import { SiTailwindcss, SiMysql, SiAdobephotoshop, SiFigma } from "react-icons/si";
 
-const skills = [
-    { name: "HTML5", icon: <FaHtml5 className="text-6xl text-orange-600" /> },
-    { name: "CSS3", icon: <FaCss3Alt className="text-6xl text-blue-600" /> },
-    { name: "JavaScript", icon: <FaJs className="text-6xl text-yellow-500" /> },
-    { name: "React", icon: <FaReact className="text-6xl text-blue-400" /> },
-    { name: "Python", icon: <FaPython className="text-6xl text-blue-500" /> },
-    { name: "PHP", icon: <FaPhp className="text-6xl text-purple-700" /> },
-    { name: "Laravel", icon: <FaLaravel className="text-6xl text-red-600" /> },
-    { name: "MySQL", icon: <SiMysql className="text-6xl text-blue-800" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-6xl text-blue-400" /> },
-    { name: "Adobe Photoshop", icon: <SiAdobephotoshop className="text-6xl text-blue-700" /> },
-    { name: "Figma", icon: <SiFigma className="text-6xl text-pink-500" /> },
-    { name: "GitHub", icon: <FaGithub className="text-6xl text-gray-800" /> },
-    { name: "Flutter", icon: <FaFlutter className="text-6xl text-blue-500" /> },
-]
-    
-const Skills = () => {
-  return (
-    <div id="skill" className="items-center justify-center px-10 py-20 mt-9 pb-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-center uppercase leading-relaxed text-amber-200 mb-8  underline underline-offset-8">
-          My <span className="text-yellow-200">Skills</span>
-        </h2>
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-10 p-4">
-            {skills.map((skill) => (
-                <div key={skill.name} className="flex flex-col items-center">
-                    {skill.icon}
-                    <span className="mt-2 text-white">{skill.name}</span>
-                </div>
-            ))}
-        </div>
-    </div>
-  );
-};
-
+const skills = [["HTML5", FaHtml5, "text-orange-500"], ["CSS3", FaCss3Alt, "text-blue-500"], ["JavaScript", FaJs, "text-yellow-300"], ["React", FaReact, "text-cyan-400"], ["Python", FaPython, "text-blue-400"], ["PHP", FaPhp, "text-violet-400"], ["Laravel", FaLaravel, "text-red-500"], ["MySQL", SiMysql, "text-sky-500"], ["Tailwind CSS", SiTailwindcss, "text-cyan-400"], ["Photoshop", SiAdobephotoshop, "text-blue-500"], ["Figma", SiFigma, "text-pink-400"], ["GitHub", FaGithub, "text-slate-100"], ["Flutter", FaFlutter, "text-sky-400"]];
+const Skills = () => <section id="skill" className="section"><div className="text-center"><p className="eyebrow">My toolkit</p><h2 className="section-title">Tools I use to bring ideas to life.</h2></div><div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">{skills.map(([name, Icon, color]) => <div key={name} className="group flex min-h-32 flex-col items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-amber-300/50 hover:bg-slate-800">{React.createElement(Icon, { className: `text-4xl transition duration-300 group-hover:scale-110 ${color}` })}<span className="mt-3 text-center text-xs font-medium text-slate-300">{name}</span></div>)}</div></section>;
 export default Skills;

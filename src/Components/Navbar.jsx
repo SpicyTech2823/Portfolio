@@ -1,117 +1,19 @@
-import React, { useCallback, useMemo } from "react";
-import { Link } from "react-scroll";
+import { useEffect, useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+
+const navItems = ["Home", "About", "Skills", "Projects", "Certificates", "Contact"];
+const ids = ["home", "about", "skill", "project", "certificate", "contact"];
 const Navbar = () => {
-  const [scrolled, setScrolled] = React.useState(false);
-  const [menuOpen, setMenuOpen] = React.useState(false);
-
-  React.useEffect(() => {
-    let ticking = false;
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const offset = window.scrollY;
-          setScrolled(offset > 50);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const handleMenuToggle = useCallback(() => {
-    setMenuOpen((prev) => !prev);
-  }, []);
-
-  const handleMenuClose = useCallback(() => {
-    setMenuOpen(false);
-  }, []);
-  const navItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "skill", label: "Skill" },
-    { id: "project", label: "Project" },
-    { id: "certificate", label: "Certificate" },
-    { id: "contact", label: "Contact" },
-  ];
-  const navBgClass = useMemo(
-    () => (scrolled ? "bg-yellow-200" : "bg-black"),
-    [scrolled],
-  );
-  const navTextClass = useMemo(
-    () => (scrolled ? "text-black" : "text-white"),
-    [scrolled],
-  );
-  const hoverClass = useMemo(
-    () => (scrolled ? "hover:text-black" : "hover:text-yellow-200"),
-    [scrolled],
-  );
-  return (
-    <nav
-      className={`fixed top-0 left-0 w-full h-20 bg-gray-800 shadow-md z-50 transition-colors duration-500 ${navBgClass}`}
-    >
-      <div
-        className={`container mx-auto flex justify-between items-center p-4 ${navTextClass}`}
-      >
-        <div className="text-2xl font-bold">SLES SAKIRIN</div>
-        {/* Desktop menu */}
-        <ul className="hidden md:flex gap-8 text-lg font-medium">
-          {navItems.map((item) => (
-            <li key={item.id}>
-              <Link
-                to={item.id}
-                smooth={true}
-                duration={500}
-                spy={true}
-                offset={-70}
-                className={`cursor-pointer hover:underline transition-colors duration-300 ${hoverClass}`}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        {/* Mobile hamburger */}
-        <div className="md:hidden">
-          <button onClick={handleMenuToggle} className="focus:outline-none">
-            <div
-              className={`w-6 h-0.5 bg-current mb-1 transition-transform duration-300 ${menuOpen ? "transform rotate-45 translate-y-1.5" : ""}`}
-            ></div>
-            <div
-              className={`w-6 h-0.5 bg-current mb-1 transition-opacity duration-300 ${menuOpen ? "opacity-0" : ""}`}
-            ></div>
-            <div
-              className={`w-6 h-0.5 bg-current transition-transform duration-300 ${menuOpen ? "transform -rotate-45 -translate-y-1.5" : ""}`}
-            ></div>
-          </button>
-          {menuOpen && (
-            <ul className="absolute right-4 mt-2 w-40 bg-white rounded-md shadow-lg py-2 text-black">
-              {navItems.map((item) => (
-                <li
-                  key={item.id}
-                  className="px-4 py-2 hover:bg-gray-200 transition-colors duration-200"
-                >
-                  <Link
-                    to={item.id}
-                    smooth={true}
-                    duration={500}
-                    spy={true}
-                    offset={-70}
-                    className="cursor-pointer"
-                    onClick={handleMenuClose}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </div>
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => { const update = () => setScrolled(window.scrollY > 20); update(); window.addEventListener("scroll", update, { passive: true }); return () => window.removeEventListener("scroll", update); }, []);
+  return <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "border-b border-slate-800 bg-slate-950/85 shadow-lg shadow-black/10 backdrop-blur-xl" : "bg-transparent"}`}>
+    <nav className="mx-auto flex h-20 w-[min(1120px,calc(100%-2.5rem))] items-center justify-between">
+      <a href="#home" className="font-bold tracking-[.18em] text-white">SS<span className="text-amber-300">.</span></a>
+      <div className="hidden items-center gap-7 md:flex">{navItems.map((item, index) => <a className="text-sm text-slate-300 transition hover:text-amber-300" href={`#${ids[index]}`} key={item}>{item}</a>)}<a href="#contact" className="rounded-full bg-amber-300 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-200">Let’s talk</a></div>
+      <button aria-label="Toggle navigation" onClick={() => setMenuOpen(!menuOpen)} className="text-xl text-white md:hidden">{menuOpen ? <FaTimes /> : <FaBars />}</button>
     </nav>
-  );
+    {menuOpen && <div className="border-t border-slate-800 bg-slate-950 px-5 pb-5 md:hidden">{navItems.map((item, index) => <a onClick={() => setMenuOpen(false)} className="block border-b border-slate-800 py-3 text-sm text-slate-200" href={`#${ids[index]}`} key={item}>{item}</a>)}</div>}
+  </header>;
 };
-
 export default Navbar;

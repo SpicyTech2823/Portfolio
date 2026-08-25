@@ -1,11 +1,19 @@
 @import "tailwindcss";
-html {
-  scroll-behavior: smooth;
-}
-body {
-  background-color: black;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}   
+
+:root { color: #f8fafc; background: #070b14; font-family: "Poppins", sans-serif; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #070b14; }
+::selection { background: #fbbf24; color: #111827; }
+.page-shell { overflow: hidden; background: radial-gradient(circle at 80% 0%, rgba(245, 158, 11, .13), transparent 25rem), #070b14; }
+.section { width: min(1120px, calc(100% - 2.5rem)); margin: 0 auto; padding: 6.5rem 0; scroll-margin-top: 5rem; }
+.eyebrow { color: #fbbf24; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.section-title { margin: .6rem 0 1rem; color: #fff; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.08; font-weight: 700; letter-spacing: -.04em; }
+.section-copy { max-width: 38rem; color: #94a3b8; line-height: 1.8; }
+.reveal { animation: rise .7s both; }
+.reveal-delay { animation: rise .7s .16s both; }
+.reveal-delay-2 { animation: rise .7s .3s both; }
+@keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 50% { transform: translateY(-13px); } }
+@keyframes pulse-ring { 50% { opacity: .3; transform: scale(1.08); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }

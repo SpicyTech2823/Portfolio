@@ -1,120 +1,18 @@
-
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { FaEnvelope, FaLocationDot, FaPhone } from "react-icons/fa6";
+
 const Contact = () => {
-  const [message, setMessage] = useState("");
   const onSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-
-    formData.append("access_key", "dd64c439-81c3-432c-b88a-9091eaf3aff6");
-
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: json,
-    }).then((res) => res.json());
-
-    if (res.success) {
-      setMessage("Message sent successfully");
-      Swal.fire({
-        title: "Successfully!",
-        text: "Your message has been submitted!",
-        icon: "success",
-      });
-      event.target.reset();
-    } else {
-      setMessage("Something went wrong");
-    }
-    
+    const formData = new FormData(event.target); formData.append("access_key", "dd64c439-81c3-432c-b88a-9091eaf3aff6");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(Object.fromEntries(formData)) });
+      const result = await response.json();
+      if (!result.success) throw new Error();
+      await Swal.fire({ title: "Message sent", text: "Thanks — I’ll get back to you soon.", icon: "success", confirmButtonColor: "#fbbf24" }); event.target.reset();
+    } catch { Swal.fire({ title: "Couldn’t send message", text: "Please try again later or email me directly.", icon: "error" }); }
   };
-  return (
-        <section
-      id="contact"
-      className="min-h-screen flex items-center justify-center  px-10 py-20"
-    >
-      <div className="w-full max-w-5xl shadow-lg rounded-2xl p-8">
-        {/* Heading */}
-        <h2 className="text-4xl font-bold text-center text-amber-200 underline underline-offset-8 mb-10">
-          Contact <span className="text-yellow-200">Me</span>
-        </h2>
-
-        <div className="grid md:grid-cols-2 gap-20">
-          {/* Left side */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-6 text-white">
-              Get in Touch
-            </h3>
-            <p className="text-lg text-white mb-8">
-              Feel free to reach out to me by filling this form or contact me
-              directly via email.
-            </p>
-
-            <ul className="space-y-6 text-lg text-white">
-              <li>
-                <strong>Email:</strong> sakirinsles@gmail.com
-              </li>
-              <li>
-                <strong>Phone:</strong> +855 88 830 6474
-              </li>
-              <li>
-                <strong>Location:</strong> Phnom Penh, Cambodia
-              </li>
-            </ul>
-          </div>
-
-          {/* Right side (form) */}
-          <form className="space-y-6" onSubmit={onSubmit}>
-            <div>
-              <label className="block text-lg text-white mb-2">Name</label>
-              <input
-                name="name"
-                type="text"
-                placeholder="Your name"
-                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-200 outline-none text-white  text-lg"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-white mb-1">Email</label>
-              <input
-                name="email"
-                type="email"
-                placeholder="Your email"
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-yellow-200 outline-none text-white"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-white mb-1">Message</label>
-              <textarea
-                name="message"
-                rows="4"
-                placeholder="Your message"
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-yellow-200 outline-none text-white "
-                required
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-yellow-200 text-black py-2 px-4 rounded-lg hover:bg-yellow-200 transition cursor-pointer font-semibold"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-  );
+  const inputClass = "mt-2 w-full rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-amber-300 focus:ring-2 focus:ring-amber-300/15";
+  return <section id="contact" className="border-t border-slate-800 bg-slate-900/30"><div className="section grid gap-12 md:grid-cols-[.8fr_1.2fr]"><div><p className="eyebrow">Get in touch</p><h2 className="section-title">Let’s make something great.</h2><p className="section-copy">Have a project in mind, an opportunity, or just want to connect? My inbox is always open.</p><div className="mt-9 space-y-5 text-sm text-slate-300"><a href="mailto:sakirinsles@gmail.com" className="flex items-center gap-4 hover:text-amber-300"><FaEnvelope className="text-amber-300" /> sakirinsles@gmail.com</a><a href="tel:+855888306474" className="flex items-center gap-4 hover:text-amber-300"><FaPhone className="text-amber-300" /> +855 88 830 6474</a><p className="flex items-center gap-4"><FaLocationDot className="text-amber-300" /> Phnom Penh, Cambodia</p></div></div><form onSubmit={onSubmit} className="rounded-2xl border border-slate-800 bg-slate-950/70 p-6 sm:p-8"><label className="text-sm font-medium text-slate-200">Name<input required name="name" placeholder="Your name" className={inputClass} /></label><label className="mt-5 block text-sm font-medium text-slate-200">Email<input required name="email" type="email" placeholder="you@example.com" className={inputClass} /></label><label className="mt-5 block text-sm font-medium text-slate-200">Message<textarea required name="message" rows="5" placeholder="Tell me a little about your project..." className={inputClass} /></label><button type="submit" className="mt-6 w-full rounded-xl bg-amber-300 px-5 py-3 font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-amber-200">Send message</button></form></div></section>;
 };
-
 export default Contact;

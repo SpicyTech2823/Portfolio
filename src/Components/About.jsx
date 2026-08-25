@@ -1,24 +1,9 @@
-const About = () => {
-  return (
-    <section
-      id="about"
-      className="flex flex-col md:flex-row items-center md:items-start justify-center px-6 md:pl-28 pb-12 md:pb-15 pt-20 md:pt-40 gap-6 md:gap-40 mb-6 md:mb-[100px] md:px-28"
-    >
-      <h1 className="text-3xl md:text-5xl font-bold uppercase leading-relaxed underline text-yellow-200 underline-offset-8 ">
-        About Me
-      </h1>
-      <p className="text-base md:text-lg mt-4 max-w-3xl leading-tight text-white">
-        <span className="font-bold italic">
-          I am a developer based in Cambodia,
-        </span>{" "}
-        specializing in creating beautiful, functional, and user-friendly
-        websites and applications. With a strong foundation in HTML, CSS, and JavaScript, I bring
-        designs to life with clean and efficient code. I am passionate about web and app
-        development and continuously strive to learn new technologies and
-        improve my skills.
-      </p>
-    </section>
-  );
-};
-
+const About = () => (
+  <section id="about" className="border-y border-slate-800 bg-slate-900/30">
+    <div className="section grid gap-12 py-24 md:grid-cols-[.8fr_1.2fr] md:items-start">
+      <div><p className="eyebrow">A little about me</p><h2 className="section-title">Curious by nature. Intentional by craft.</h2></div>
+      <div><p className="section-copy text-base sm:text-lg">I’m a developer based in Cambodia, focused on creating polished, user-friendly websites and applications. I combine a strong HTML, CSS, and JavaScript foundation with a continual drive to learn and improve.</p><div className="mt-8 flex flex-wrap gap-x-10 gap-y-4 border-t border-slate-700 pt-7 text-sm text-slate-300"><span><b className="block text-amber-300">Based in</b>Phnom Penh, Cambodia</span><span><b className="block text-amber-300">Focus</b>Web & app development</span><span><b className="block text-amber-300">Approach</b>Clean, accessible design</span></div></div>
+    </div>
+  </section>
+);
 export default About;
