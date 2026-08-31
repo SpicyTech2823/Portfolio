@@ -19,7 +19,7 @@ const projects = [
     title: "Online Book Store",
     description: "A full-stack e-commerce web application built with Laravel and MySQL for searching, browsing, and buying books online",
     link: "https://book-store-laravel-1.onrender.com/",
-    sourceCode: "https://github.com/SpicyTech2823/carental_react_node_web",
+    sourceCode: "https://github.com/SpicyTech2823/Book_Store_Laravel",
   },
   {
     image: weatherApp,
