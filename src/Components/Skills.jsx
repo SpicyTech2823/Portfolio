@@ -1,8 +1,58 @@
 import React from "react";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaPhp, FaLaravel, FaGithub } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaPython,
+  FaPhp,
+  FaLaravel,
+  FaGithub,
+} from "react-icons/fa";
 import { FaFlutter } from "react-icons/fa6";
-import { SiTailwindcss, SiMysql, SiAdobephotoshop, SiFigma } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiMysql,
+  SiAdobephotoshop,
+  SiFigma,
+} from "react-icons/si";
 
-const skills = [["HTML5", FaHtml5, "text-orange-500"], ["CSS3", FaCss3Alt, "text-blue-500"], ["JavaScript", FaJs, "text-yellow-300"], ["React", FaReact, "text-cyan-400"], ["Python", FaPython, "text-blue-400"], ["PHP", FaPhp, "text-violet-400"], ["Laravel", FaLaravel, "text-red-500"], ["MySQL", SiMysql, "text-sky-500"], ["Tailwind CSS", SiTailwindcss, "text-cyan-400"], ["Photoshop", SiAdobephotoshop, "text-blue-500"], ["Figma", SiFigma, "text-pink-400"], ["GitHub", FaGithub, "text-slate-100"], ["Flutter", FaFlutter, "text-sky-400"]];
-const Skills = () => <section id="skill" className="section"><div className="text-center"><p className="eyebrow">My toolkit</p><h2 className="section-title">Tools I use to bring ideas to life.</h2></div><div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">{skills.map(([name, Icon, color]) => <div key={name} className="group flex min-h-32 flex-col items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-amber-300/50 hover:bg-slate-800">{React.createElement(Icon, { className: `text-4xl transition duration-300 group-hover:scale-110 ${color}` })}<span className="mt-3 text-center text-xs font-medium text-slate-300">{name}</span></div>)}</div></section>;
+const skills = [
+  ["HTML5", FaHtml5, "text-orange-500"],
+  ["CSS3", FaCss3Alt, "text-blue-500"],
+  ["JavaScript", FaJs, "text-yellow-300"],
+  ["React", FaReact, "text-cyan-400"],
+  ["Python", FaPython, "text-blue-400"],
+  ["PHP", FaPhp, "text-violet-400"],
+  ["Laravel", FaLaravel, "text-red-500"],
+  ["MySQL", SiMysql, "text-sky-500"],
+  ["Tailwind CSS", SiTailwindcss, "text-cyan-400"],
+  ["Photoshop", SiAdobephotoshop, "text-blue-500"],
+  ["Figma", SiFigma, "text-pink-400"],
+  ["GitHub", FaGithub, "text-slate-100"],
+  ["Flutter", FaFlutter, "text-sky-400"],
+];
+const Skills = () => (
+  <section id="skill" className="section">
+    <div className="text-center">
+      <p className="eyebrow">My toolkit</p>
+      <h2 className="section-title">Tools I use to bring ideas to life.</h2>
+    </div>
+    <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
+      {skills.map(([name, Icon, color]) => (
+        <div
+          key={name}
+          className="group flex min-h-32 flex-col items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-amber-300/50 hover:bg-slate-800"
+        >
+          {React.createElement(Icon, {
+            className: `text-4xl transition duration-300 group-hover:scale-110 ${color}`,
+          })}
+          <span className="mt-3 text-center text-xs font-medium text-slate-300">
+            {name}
+          </span>
+        </div>
+      ))}
+    </div>
+  </section>
+);
 export default Skills;
